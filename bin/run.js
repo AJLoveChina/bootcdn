@@ -3,7 +3,7 @@
 let bootcdn = require("../src/lib/bootcdn")
 let inquirer = require("inquirer")
 let arguments = process.argv.splice(2);
-let name = arguments[0];
+let name = arguments[0] || 'lodash.js';
 let version = arguments[1];
 
 if (/\-info$/.test(name) || name === undefined) {
@@ -19,18 +19,25 @@ bootcdn.search(name).then(items => {
   }
   var newList = items.slice(0, 10)
 
-  var map = [{
-    type : 'list',
-    name : 'project',
-    message : "当前查询结果较多, 请选择库",
-    choices : newList.map(arr  => arr[0])
-  }]
+  if (newList.length > 1) {
+    let map = [{
+      type : 'list',
+      name : 'project',
+      message : "当前查询结果较多, 请选择库",
+      choices : newList.map(arr  => arr[0])
+    }]
 
-  inquirer.prompt(map).then(answers => {
-    var project = answers.project;
+    inquirer.prompt(map).then(answers => {
+      deal(answers.project)
+    });
+  } else {
+    deal(newList[0][0]);
+  }
 
+
+  function deal (project) {
     bootcdn.getDesc(project, version).then(result => {
       console.log(result === undefined ? "未找到相应的库" : JSON.stringify(result, null, 2));
     })
-  });
+  }
 })
