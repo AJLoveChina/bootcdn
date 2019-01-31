@@ -1,6 +1,6 @@
 {
   "name": "bootcdn",
-  "version": "1.1.0",
+  "version": "1.1.4",
   "description": "查询web开源库的bootcdn地址",
   "main": "src/lib/bootcdn.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "inquirer": "^5.2.0"
