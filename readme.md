@@ -20,6 +20,11 @@ $ bootcdn jquery
 $ bootcdn jquery 1.10
 ```
 
+3.查询所有的版本
+```bash
+$ bootcdn jquery all
+```
+
 3.帮助
 ```bash
 $ bootcdn -info
