@@ -1,10 +1,10 @@
 {
   "name": "bootcdn",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "查询web开源库的bootcdn地址",
-  "main": "index.js",
+  "main": "src/lib/bootcdn.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "keywords": [],
   "author": "",
