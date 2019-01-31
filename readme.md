@@ -2,6 +2,8 @@
 
 快速查询一个开源库在bootcdn的URL地址
 
+<a href="https://asciinema.org/a/UFYyfYoULErlqDjVq7ggxDZW3" target="_blank"><img src="https://asciinema.org/a/UFYyfYoULErlqDjVq7ggxDZW3.svg" /></a>
+
 ## 安装
 
 ```bash
