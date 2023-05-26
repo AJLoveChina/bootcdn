@@ -7,7 +7,7 @@ let packjson = require("../../package.json");
 
 module.exports = {
     downloadJsonFileFromBootcdn() {
-        return axios.get("https://api.bootcdn.cn/libraries.min.json")
+        return axios.get("https://api.bootcdn.cn/libs.min.json")
     },
 
     cache(data) {
