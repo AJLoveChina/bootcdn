@@ -74,13 +74,16 @@ module.exports = {
   getDetail: getLibDetail,
   getDesc(name, version) {
     if (["list", "detail", "all", "version"].indexOf(version) !== -1) {
-      return this.getDetail(name).then(res => {
+      return this.getDetail(name).then(res => res.data).then(res => {
+        if (res instanceof Array) {
+          res = res[0];
+        }
         let list = [];
-        list.push(`主页 : ${res.data.homepage}`);
-        list.push(`描述 : ${res.data.description}`);
-        list.push(`license : ${res.data.license}`);
-        list.push(`已列出所有的版本, 最新版本是 ${res.data.version}`);
-        list.push(...res.data.assets.map(item => item.version));
+        list.push(`主页 : ${res.homepage}`);
+        list.push(`描述 : ${res.description}`);
+        list.push(`license : ${res.license}`);
+        list.push(`已列出所有的版本, 最新版本是 ${res.version}`);
+        list.push(...res.assets.map(item => item.version));
 
         list = list.reverse();
         return list;
